@@ -1,0 +1,176 @@
+html,
+body{
+	margin: 0;
+	color: #333;
+	font-family: 'Montserrat', sans-serif;
+}
+
+body{
+	background-color: #ffffff;
+}
+
+.colour-bar{
+	height:20px;
+	width: 100%;
+	background-color: #0b4d25;
+}
+
+.front-page .box{
+	background-color: #2980b9;
+}
+
+.menu-main-nav-container img{
+	width: 100%;
+}
+
+.menu-main-nav-container,
+.menu-programmes-container{
+	background-color: #ffffff;
+	height: 100px;
+}
+#menu-main-nav,
+#menu-programmes{
+	max-width: 1200px;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    
+}
+
+#menu-main-nav li,
+#menu-programmes li{
+	float: right;
+	position: relative;
+	
+	
+}
+
+#menu-main-nav li a,
+#menu-programmes li a{
+    display: block;
+    color: #0b4d25;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 50px;
+
+
+}
+
+#menu-main-nav li a:hover ,
+#menu-programmes li a:hover{
+    /*background-color: #fff;*/
+    color: #0b4d25;
+    border-bottom: 1.5px solid #0b4d25;
+    transition: .2s ease
+}
+
+#menu-main-nav li.current-menu-item,
+#menu-programmes li.current-menu-item={
+	background-color: #95a5a6;
+	font-family: 'Montserrat', sans-serif;
+}
+
+footer{
+	background-color: #34495e;
+	color: white;
+	text-align: center;
+	padding: 2em;
+}
+
+footer:after{
+	clear: both;
+	content:'';
+	display: block;
+}
+
+footer #menu-footer_nav{
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+
+#menu-footer_nav li {
+	display:inline;
+
+}
+
+#menu-footer_nav li a{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.img-responsive{
+	max-width: 100%;
+	
+}
+
+
+
+img.custom-logo {
+
+	position: relative;
+	top: 40px;
+	left: 40px;
+
+
+}
+
+#text-6{
+	font-size: 17px;
+}
+
+.widgettitle{
+	font-size: 17px;
+
+}
+
+.image{
+	width: 250px;
+}
+
+.alignnone{
+	/*width: 400px;*/
+}
+
+.image-post{
+	width: 400px;
+	margin-bottom: 40px;
+	
+}
+
+.menu-post{
+   /*background-color: #e8caab ;*/
+   
+}
+
+.insta-post{
+	
+	margin-bottom: 40px;
+
+}
+
+.widgettitle{
+	font-family: 'Open Sans', sans-serif;
+	line-height: 120%;
+	width: 70%
+
+}
+
+#sidebar{
+	
+	font-family: 'Open Sans', sans-serif;
+
+}
+
+.menu-item{
+	
+	font-family: 'Open Sans', sans-serif;}
+
