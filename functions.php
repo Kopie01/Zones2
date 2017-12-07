@@ -181,11 +181,159 @@ add_action( 'init', 'services_init' );
 
 
 
+function about_init() {
+    $labels = array(
+        'name'               => _x( 'About', 'post type general name' ),
+        'singular_name'      => _x( 'About', 'post type singular name' ),
+        'menu_name'          => _x( 'About', 'admin menu' ),
+        'name_admin_bar'     => _x( 'About', 'add new on admin bar' ),
+        'add_new'            => _x( 'Add New About', 'programme' ),
+        'add_new_item'       => __( 'Add New About' ),
+        'new_item'           => __( 'New About' ),
+        'edit_item'          => __( 'Edit About' ),
+        'view_item'          => __( 'View About' ),
+        'all_items'          => __( 'All About' ),
+        'search_items'       => __( 'Search About' ),
+        'parent_item_colon'  => __( 'Parent About:' ),
+        'not_found'          => __( 'No About found.' ),
+        'not_found_in_trash' => __( 'No About found in Trash.' )
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_ui' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'rewrite' => array('slug' => 'about'),
+        'query_var' => true,
+        'menu_icon' => 'dashicons-clipboard',
+        'supports' => array(
+            'title',
+            'editor',
+            'thumbnail',),
+        );
+    register_post_type( 'about', $args );
+}
+add_action( 'init', 'about_init' );
+
+
+function case_init() {
+    $labels = array(
+        'name'               => _x( 'Case Studies', 'post type general name' ),
+        'singular_name'      => _x( 'Case Studies', 'post type singular name' ),
+        'menu_name'          => _x( 'Case Studies', 'admin menu' ),
+        'name_admin_bar'     => _x( 'Case Studies', 'add new on admin bar' ),
+        'add_new'            => _x( 'Add New Case Studies', 'programme' ),
+        'add_new_item'       => __( 'Add New Case Studies' ),
+        'new_item'           => __( 'New Case Studies' ),
+        'edit_item'          => __( 'Edit Case Studies' ),
+        'view_item'          => __( 'View Case Studies' ),
+        'all_items'          => __( 'All Case Studies' ),
+        'search_items'       => __( 'Search Case Studies' ),
+        'parent_item_colon'  => __( 'Parent Case Studies:' ),
+        'not_found'          => __( 'No Case Studies found.' ),
+        'not_found_in_trash' => __( 'No Case Studies found in Trash.' )
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_ui' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'rewrite' => array('slug' => 'case'),
+        'query_var' => true,
+        'menu_icon' => 'dashicons-clipboard',
+        'supports' => array(
+            'title',
+            'editor',
+            'thumbnail',),
+        );
+    register_post_type( 'case', $args );
+}
+add_action( 'init', 'case_init' );
 
 
 
 
 
+
+$metaboxes = array(
+    'services' => array(
+        'title' => __('Person Information'),
+        'applicableto' => 'services',
+        'location' => 'normal',
+        'priority' => 'low',
+        'fields' => array(
+            'person_name' => array(
+                'title' => __('Name of Person: '),
+                'type' => 'text'
+            ),
+            'endDate' => array(
+            	'title' => __('End Date: '),
+            	'type' => 'number'
+            )
+        )
+    )
+);
+add_action( 'admin_init', 'add_post_format_metabox' );
+function add_post_format_metabox() {
+    global $metaboxes;
+    if ( ! empty( $metaboxes ) ) {
+        foreach ( $metaboxes as $id => $metabox ) {
+            add_meta_box( $id, $metabox['title'], 'show_metaboxes', $metabox['applicableto'], $metabox['location'], $metabox['priority'], $id );
+        }
+    }
+}
+function show_metaboxes( $post, $args ) {
+    global $metaboxes;
+    $custom = get_post_custom( $post->ID );
+    $fields = $tabs = $metaboxes[$args['id']]['fields'];
+    $output = '<input type="hidden" name="post_format_meta_box_nonce" value="' . wp_create_nonce( basename( __FILE__ ) ) . '" />';
+    if ( sizeof( $fields ) ) {
+        foreach ( $fields as $id => $field ) {
+            switch ( $field['type'] ) {
+                default:
+                case "text":
+                    $output .= '<label for="' . $id . '">' . $field['title'] . '</label><input class="customInput" id="' . $id . '" type="text" name="' . $id . '" value="' . $custom[$id][0] . '" style="width: 100%;" />';
+                    break;
+                case "number":
+                    $output .= '<label for="' . $id . '">' . $field['title'] . '</label><input class="customInput" id="' . $id . '" type="number" name="' . $id . '" value="' . $custom[$id][0] . '" style="width: 100%;" />';
+                break;
+            }
+        }
+    }
+    echo $output;
+}
+add_action( 'save_post', 'save_metaboxes' );
+function save_metaboxes( $post_id ) {
+    global $metaboxes;
+    if ( ! wp_verify_nonce( $_POST['post_format_meta_box_nonce'], basename( __FILE__ ) ) )
+        return $post_id;
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+        return $post_id;
+    if ( 'page' == $_POST['post_type'] ) {
+        if ( ! current_user_can( 'edit_page', $post_id ) )
+            return $post_id;
+    } elseif ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return $post_id;
+    }
+    $post_type = get_post_type();
+    foreach ( $metaboxes as $id => $metabox ) {
+        if ( $metabox['applicableto'] == $post_type ) {
+            $fields = $metaboxes[$id]['fields'];
+            foreach ( $fields as $id => $field ) {
+                $old = get_post_meta( $post_id, $id, true );
+                $new = $_POST[$id];
+                if ( $new && $new != $old ) {
+                    update_post_meta( $post_id, $id, $new );
+                }
+                elseif ( '' == $new && $old || ! isset( $_POST[$id] ) ) {
+                    delete_post_meta( $post_id, $id, $old );
+                }
+            }
+        }
+    }
+}
 
 
 

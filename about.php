@@ -1,18 +1,22 @@
 <?php 
 
 /*
-	Template Name: Front page / Services
+	Template Name: About
 */
 
  ?>
   <?php get_header(); ?>
+<h2> This is an about page </h2>
+ <div class="aboutimage">hello</div>
 
 <br>
 <br>
+
+
 <div class="container">
 <?php 
     $parms = array(
-        'post_type' => 'services',
+        'post_type' => 'about',
         'posts_per_page' => 6
     );
     $firstRow = new WP_Query($parms);

@@ -28,7 +28,8 @@
 	<?php if( is_front_page() ): ?>
  		<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>">
 	<?php endif; ?>
-	<div class="container">
+	<br>
+	
 
 
 

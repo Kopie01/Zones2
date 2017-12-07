@@ -1,7 +1,7 @@
 <?php 
 
 /*
-	Template Name: Front page / Services
+	Template Name: Case
 */
 
  ?>
@@ -12,11 +12,12 @@
 <div class="container">
 <?php 
     $parms = array(
-        'post_type' => 'services',
+        'post_type' => 'case',
         'posts_per_page' => 6
     );
     $firstRow = new WP_Query($parms);
 ?>
+
 
 <div class="row">
     <?php if($firstRow->have_posts()): ?>
