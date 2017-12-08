@@ -1,7 +1,7 @@
 <html>
 <head>
 	<title>Custom Wordpress Site</title>
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> -->
 	
 	<?php wp_head(); ?>
 </head>
@@ -18,7 +18,9 @@
 		
 	<?php endif; ?>
 	<?php the_custom_logo(); ?>
-	<?php wp_nav_menu(array('theme_location'=>'primary')); ?>
+	<?php wp_nav_menu(array('theme_location'=>'primary', 'menu_id' => 'menu-main-nav')); ?>
+
+	
 
 	
 

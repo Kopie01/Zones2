@@ -3,6 +3,9 @@
 add_image_size( 'front-thumb', 350, 350, true );
 add_image_size( 'about-image', 500, 500, true );
 
+function addGoogleFonts(){
+   wp_enqueue_style( 'Montserrat', 'https://fonts.googleapis.com/css?family=Montserrat:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i', false );
+};
 
 function customThemeEnqueues(){
 	wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.7', 'all');
