@@ -1,6 +1,7 @@
 <?php 
 
 add_image_size( 'front-thumb', 350, 350, true );
+add_image_size( 'about-image', 500, 500, true );
 
 
 function customThemeEnqueues(){

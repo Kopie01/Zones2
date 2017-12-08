@@ -1,15 +1,12 @@
   <?php get_header(); ?>
 
-<?php if(!is_singular('services')):?>
-    <div class="insta-post"><?php the_post_thumbnail('large', ['class' => 'img-responsive', 'title' => 'Feature image']); ?></div>
-<?php endif; ?>
 
-<h1> This is a case studies post </h1>
 
 <div class="container">
+<div class="insta-post"><?php the_post_thumbnail('large', ['class' => 'img-responsive', 'title' => 'Feature image']); ?></div>
   
     <div class="row">
-        <div class="col-xs-12 col-sm-8">
+        <div class="col-xs-12 col-sm-12">
             <div class="content">
              
                     
@@ -41,9 +38,7 @@
              </div>
         </div>
 
-        <div class="col-xs-12 col-sm-4">
-            <?php get_sidebar(); ?>
-        </div>
+        <!-- sidebar would go here -->
     </div>
 
 
