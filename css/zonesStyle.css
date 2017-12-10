@@ -10,7 +10,9 @@ body{
 }
 
 p{
-	width: 500px;
+	width: 100%;
+	line-height: 160%;
+	font-size: 15px;
 }
 
 h3{
@@ -23,11 +25,7 @@ h4{
 	color: #000000;
 }
 
-h5{
-	width: 650px;
-	line-height: 150%;
 
-}
 
 .wp-post-image{
 	width: 100%;
@@ -44,6 +42,12 @@ h5{
 	height: 400px;
 	background-image: url("http://192.168.33.10/Zones_Landscaping/wp-content/uploads/2017/12/Screen-Shot-2017-12-08-at-7.39.42-PM-1.png");
 	background-repeat: no-repeat;
+	
+}
+
+.aboutimage img{
+	width: 100%;
+	
 	
 }
 
@@ -193,9 +197,9 @@ img.custom-logo {
 	
 }
 
-.menu-post{
-   /*background-color: #e8caab ;*/
+.menu-post img{
    
+  
 }
 
 .insta-post{
@@ -212,7 +216,7 @@ img.custom-logo {
 }
 
 .insta-post img{
-	
+	border-radius: 5px;
 }
 
 .insta-post img:hover{
@@ -233,8 +237,8 @@ img.custom-logo {
 
     #menu-main-nav {
 	display: block;
-	
-	padding: 30px;
+	font-size: 215px;
+	padding: 50px;
 
 
 
@@ -245,9 +249,60 @@ img.custom-logo {
 	float: none;
 	padding: 10px;
 
+
 }
 	.custom-logo{
 		margin: 0 auto;
 	}
 
 }
+
+.question-form{
+
+	height: 40px;
+	width: 180px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+#message{
+ 
+    width: 500px;
+    height: 200px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#submit{
+	height: 40px;
+	width: 170px;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #0b4d25;
+	color: #ffffff;
+
+}
+
+
+
+.question-form:focus{
+	outline-width: 0;
+}
+
+#message:focus{
+	outline-width: 0;
+}
+
+#submit:focus{
+	outline-width: 0;
+}
+
+#submit:hover{
+	background-color: #434343;
+}
+
+
+
+
+
+

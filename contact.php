@@ -6,23 +6,62 @@
 
 <?php get_header(); ?>
 
+
+
 <div class="container">
+
+  
+    <div class="row">
+        <div class="col-xs-12 col-sm-8">
+            <div class="content">
+             
+               <h2>Contact Us </h2>
+
+	<br>
+	<br>
 	
-	Your Name:<input type="text" name="yourname" id="yourname" rows="1" value="" /> <br /><br /> 
+	<input type="text" name="yourname" id="firstname" class="question-form" rows="1" value="" placeholder="First Name" /> 
 
-Your Email:<input type="text" name="email" id="email" rows="1" value="" /> <br /><br /> 
+	<input type="text" name="yourname" id="lastname" class="question-form" rows="1" value="" placeholder="Last Name" /> <br /><br /> 
 
-Subject:<input type="text" name="subject" id="subject" rows="1" value=""></p> <br /><br /> 
+	<input type="text" name="yourname" id="phone" class="question-form" rows="1" value="" placeholder="Phone Number" />  
 
-Leave a Message:<textarea name="message" id="message" ></textarea> <br /><br /> <input type="submit" name="submit" id="submit" value="Send"/> </form> 
+	<input type="text" name="email" id="email" class="question-form" rows="1" value="" placeholder="Email" /> <br /><br /> 
 
+	<input type="text" name="subject" id="subject" class="question-form" rows="1" value="" placeholder="Subject"></p> 
+
+	<textarea name="message" id="message" placeholder="Please write your enquiry here"></textarea> <br /><br /> 
+
+	<input type="submit" name="submit" id="submit" value="Submit"/> </form> 
+
+
+
+
+
+
+
+
+             </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-3">
+            <?php get_sidebar(); ?>
+        </div>
+    </div>
+
+
+
+	
 
 
 </div>
 
 <br>
 <br>
+<br>
+<br>
 
+<?php get_footer(); ?>
 
 
 
