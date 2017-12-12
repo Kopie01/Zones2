@@ -20,19 +20,22 @@ h3{
 	color:#000000;
 }
 
+
 h4{
 	text-align: center;
 	color: #000000;
 }
 
-
+h2.widgettitle{
+	font-family: 'Montserrat', sans-serif;
+}
 
 .wp-post-image{
 	width: 100%;
 
 }
 
-.intro{
+#intro{
 	width: 700px;
 	font-size: 17px;
 }
@@ -42,8 +45,15 @@ h4{
 	height: 400px;
 	background-image: url("http://192.168.33.10/Zones_Landscaping/wp-content/uploads/2017/12/Screen-Shot-2017-12-08-at-7.39.42-PM-1.png");
 	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 	
 }
+
+.logo-menu{
+	height: 200px;
+}
+
 
 .aboutimage img{
 	width: 100%;
@@ -59,6 +69,11 @@ h4{
 
 .front-page .box{
 	background-color: #2980b9;
+}
+
+#menu-main-nav{
+	margin-bottom: 20px;
+	padding-bottom: 20px;
 }
 
 .menu-main-nav-container img{
@@ -92,8 +107,9 @@ h4{
 	max-width: 1200px;
     list-style-type: none;
     margin: 0 auto;
-    padding: 0;
-    overflow: hidden;
+    padding: 40px;
+    position: relative;
+    top: -40px;
     
 }
 
@@ -197,16 +213,14 @@ img.custom-logo {
 	
 }
 
-.menu-post img{
-   
-  
-}
 
 .insta-post{
 	
 	margin-bottom: 40px;
 
 }
+
+
 
 .widgettitle{
 	font-family: 'Open Sans', sans-serif;
@@ -224,6 +238,13 @@ img.custom-logo {
 		
 }
 
+#message{
+ 
+    width: 500px;
+    height: 200px;
+    padding: 10px;
+    border-radius: 5px;
+}
 
 @media only screen and (max-width: 800px) {
     body{
@@ -236,14 +257,18 @@ img.custom-logo {
     }
 
     #menu-main-nav {
-	display: block;
-	font-size: 215px;
 	padding: 50px;
-
-
+	position: relative;
+    top: 0px;
 
 }
 	
+
+	#intro{
+	width: 100%;
+	font-size: 14px;
+}
+
 	#menu-main-nav li{
 	display: block;
 	float: none;
@@ -267,10 +292,7 @@ img.custom-logo {
 
 #message{
  
-    width: 500px;
-    height: 200px;
-    padding: 10px;
-    border-radius: 5px;
+    width: 100%;
 }
 
 #submit{
@@ -301,6 +323,12 @@ img.custom-logo {
 	background-color: #434343;
 }
 
+h2{
+	font-size: 20px;
+}
+ p{
+ 	font-size: 13px;
+ }
 
 
 

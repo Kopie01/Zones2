@@ -19,6 +19,8 @@
 
 	<br>
 	<br>
+
+	<form method="post" id="contactus_form">
 	
 	<input type="text" name="yourname" id="firstname" class="question-form" rows="1" value="" placeholder="First Name" /> 
 
@@ -32,7 +34,7 @@
 
 	<textarea name="message" id="message" placeholder="Please write your enquiry here"></textarea> <br /><br /> 
 
-	<input type="submit" name="submit" id="submit" value="Submit"/> </form> 
+	<a href="#"><input type="submit" name="submit" id="submit" value="Submit"/> </form> </a>
 
 
 

@@ -6,8 +6,9 @@
 
  ?>
 
- <?php get_header(); ?>
-
+<div class="logo-menu">
+    <?php get_header(); ?>
+</div>
 
 
 

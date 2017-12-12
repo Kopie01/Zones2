@@ -28,7 +28,8 @@
 
 	
 	<?php if( is_front_page() ): ?>
- 		<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>">
+		
+		 <div class="aboutimage" style="background-image: url(<?php echo esc_url( get_header_image() ); ?>)"></div>
 	<?php endif; ?>
 	<br>
 	

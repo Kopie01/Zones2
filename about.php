@@ -6,7 +6,11 @@
 
  ?>
   <?php get_header(); ?>
- <div class="aboutimage"></div>
+
+
+      <div class="aboutimage"></div>
+
+
 
 <br>
 
@@ -16,7 +20,7 @@
 
 <h2>Landscaping Specialists</h2>
 
-        <div class="intro">
+        <div id="intro">
                 Zones are specialists at designing, building and landscaping outdoor living spaces. Most landscapers and tradespeople focus on one or two specialist areas, such as concreting, paving or planting. At Zones we provide a total solution across all trades to deliver a hassle free project on time and to your budget.
 
 
