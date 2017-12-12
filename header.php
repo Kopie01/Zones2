@@ -18,7 +18,8 @@
 		
 	<?php endif; ?>
 	<?php the_custom_logo(); ?>
-	<?php wp_nav_menu(array('theme_location'=>'primary', 'menu_id' => 'menu-main-nav')); ?>
+
+	<?php wp_nav_menu(array('theme_location'=>'primary', 'menu_id' => 'menu-main-nav', 'container' => '')); ?>
 
 	
 

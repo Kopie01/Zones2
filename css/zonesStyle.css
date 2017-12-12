@@ -99,8 +99,7 @@ h2.widgettitle{
 }
 .menu-main-nav-container{
 	background-color: #ffffff;
-	height: 100px;
-	
+	min-height: 100px;	
 }
 
 #menu-main-nav{
