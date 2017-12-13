@@ -15,12 +15,30 @@
         <div class="col-xs-12 col-sm-8">
             <div class="content">
              
-               <h2>Contact Us </h2>
+               
+        <div class="contactus">
 
-	<br>
-	<br>
+               <h2>Get in touch if you're thinking about landscaping your outdoor area!</h2>
 
-	<form method="post" id="contactus_form">
+				<br>
+				<br>
+
+				<p>Zones are specialists at designing, building and landscaping outdoor living spaces. 
+				If you're thinking of landscaping, get in touch to arrange a free consultation with one of 
+				our friendly representatives in your area.</p>
+
+				<h3>Phone:<br>
+				0800 30 10 20</h3>
+
+				<h3>Email:<br>
+				hello@zoneslandscapers</h3>
+
+
+
+		</div>
+
+
+<!-- 	<form method="post" id="contactus_form">
 	
 	<input type="text" name="yourname" id="firstname" class="question-form" rows="1" value="" placeholder="First Name" /> 
 
@@ -34,7 +52,7 @@
 
 	<textarea name="message" id="message" placeholder="Please write your enquiry here"></textarea> <br /><br /> 
 
-	<a href="#"><input type="submit" name="submit" id="submit" value="Submit"/> </form> </a>
+	<a href="http://192.168.33.10/Zones_Landscaping/thanks/"><input type="submit" name="submit" id="submit" value="Submit"/> </form> </a> -->
 
 
 

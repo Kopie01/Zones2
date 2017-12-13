@@ -245,6 +245,10 @@ img.custom-logo {
     border-radius: 5px;
 }
 
+.contactus{
+	width: 600px;
+}
+
 @media only screen and (max-width: 800px) {
     body{
     	
@@ -326,7 +330,7 @@ h2{
 	font-size: 20px;
 }
  p{
- 	font-size: 13px;
+ 	font-size: 15px;
  }
 
 

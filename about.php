@@ -8,7 +8,7 @@
   <?php get_header(); ?>
 
 
-      <div class="aboutimage"></div>
+      
 
 
 

@@ -3,11 +3,9 @@
 add_image_size( 'front-thumb', 350, 350, true );
 add_image_size( 'about-image', 500, 500, true );
 
-function addGoogleFonts(){
-   wp_enqueue_style( 'Montserrat', 'https://fonts.googleapis.com/css?family=Montserrat:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i', false );
-};
 
 function customThemeEnqueues(){
+    wp_enqueue_style( 'Montserrat', 'https://fonts.googleapis.com/css?family=Montserrat:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i', false );
 	wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.7', 'all');
 	wp_enqueue_style( 'customStyle', get_template_directory_uri() . '/css/zonesStyle.css' , array(), '1.0.0', 'all' );
 
@@ -256,88 +254,6 @@ function case_init() {
 }
 add_action( 'init', 'case_init' );
 
-
-
-
-
-
-$metaboxes = array(
-    'services' => array(
-        'title' => __('Person Information'),
-        'applicableto' => 'services',
-        'location' => 'normal',
-        'priority' => 'low',
-        'fields' => array(
-            'person_name' => array(
-                'title' => __('Name of Person: '),
-                'type' => 'text'
-            ),
-            'endDate' => array(
-            	'title' => __('End Date: '),
-            	'type' => 'number'
-            )
-        )
-    )
-);
-add_action( 'admin_init', 'add_post_format_metabox' );
-function add_post_format_metabox() {
-    global $metaboxes;
-    if ( ! empty( $metaboxes ) ) {
-        foreach ( $metaboxes as $id => $metabox ) {
-            add_meta_box( $id, $metabox['title'], 'show_metaboxes', $metabox['applicableto'], $metabox['location'], $metabox['priority'], $id );
-        }
-    }
-}
-function show_metaboxes( $post, $args ) {
-    global $metaboxes;
-    $custom = get_post_custom( $post->ID );
-    $fields = $tabs = $metaboxes[$args['id']]['fields'];
-    $output = '<input type="hidden" name="post_format_meta_box_nonce" value="' . wp_create_nonce( basename( __FILE__ ) ) . '" />';
-    if ( sizeof( $fields ) ) {
-        foreach ( $fields as $id => $field ) {
-            switch ( $field['type'] ) {
-                default:
-                case "text":
-                    $output .= '<label for="' . $id . '">' . $field['title'] . '</label><input class="customInput" id="' . $id . '" type="text" name="' . $id . '" value="' . $custom[$id][0] . '" style="width: 100%;" />';
-                    break;
-                case "number":
-                    $output .= '<label for="' . $id . '">' . $field['title'] . '</label><input class="customInput" id="' . $id . '" type="number" name="' . $id . '" value="' . $custom[$id][0] . '" style="width: 100%;" />';
-                break;
-            }
-        }
-    }
-    echo $output;
-}
-add_action( 'save_post', 'save_metaboxes' );
-function save_metaboxes( $post_id ) {
-    global $metaboxes;
-    if ( ! wp_verify_nonce( $_POST['post_format_meta_box_nonce'], basename( __FILE__ ) ) )
-        return $post_id;
-    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
-        return $post_id;
-    if ( 'page' == $_POST['post_type'] ) {
-        if ( ! current_user_can( 'edit_page', $post_id ) )
-            return $post_id;
-    } elseif ( ! current_user_can( 'edit_post', $post_id ) ) {
-        return $post_id;
-    }
-    $post_type = get_post_type();
-    foreach ( $metaboxes as $id => $metabox ) {
-        if ( $metabox['applicableto'] == $post_type ) {
-            $fields = $metaboxes[$id]['fields'];
-            foreach ( $fields as $id => $field ) {
-                $old = get_post_meta( $post_id, $id, true );
-                $new = $_POST[$id];
-                if ( $new && $new != $old ) {
-                    update_post_meta( $post_id, $id, $new );
-                }
-                elseif ( '' == $new && $old || ! isset( $_POST[$id] ) ) {
-                    delete_post_meta( $post_id, $id, $old );
-                }
-            }
-        }
-    }
-}
 
 
 
