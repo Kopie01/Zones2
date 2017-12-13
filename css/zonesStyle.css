@@ -26,8 +26,10 @@ h4{
 	color: #000000;
 }
 
-h2.widgettitle{
+h2{
 	font-family: 'Montserrat', sans-serif;
+	font-size: 22px;
+
 }
 
 .wp-post-image{
@@ -246,7 +248,7 @@ img.custom-logo {
 }
 
 .contactus{
-	width: 600px;
+	width: 90%;
 }
 
 @media only screen and (max-width: 800px) {
@@ -283,55 +285,17 @@ img.custom-logo {
 		margin: 0 auto;
 	}
 
-}
-
-.question-form{
-
-	height: 40px;
-	width: 180px;
-	padding: 10px;
-	border-radius: 5px;
-}
-
-#message{
- 
-    width: 100%;
-}
-
-#submit{
-	height: 40px;
-	width: 170px;
-	padding: 10px;
-	border-radius: 5px;
-	background-color: #0b4d25;
-	color: #ffffff;
-
-}
-
-
-
-.question-form:focus{
-	outline-width: 0;
-}
-
-#message:focus{
-	outline-width: 0;
-}
-
-#submit:focus{
-	outline-width: 0;
-}
-
-#submit:hover{
-	background-color: #434343;
-}
-
 h2{
-	font-size: 20px;
+	font-size: 22px;
 }
  p{
- 	font-size: 15px;
+ 	font-size: 12px;
  }
+
+}
+
+
+
 
 
 
